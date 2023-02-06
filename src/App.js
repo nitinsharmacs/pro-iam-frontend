@@ -1,7 +1,11 @@
-import './App.css';
+import Layout from './components/Layout/Layout';
 
 const App = () => {
-  return <div>Hello world</div>;
+  return (
+    <div className='app'>
+      <Layout />
+    </div>
+  );
 };
 
 export default App;
