@@ -2,6 +2,7 @@ import React from 'react';
 import './Layout.scss';
 
 import Logo from '../Logo/Logo';
+import Navbar from '../Navbar/Navbar';
 
 const Layout = (props) => {
   return (
@@ -10,10 +11,12 @@ const Layout = (props) => {
         <section className='logo-section'>
           <Logo />
         </section>
-        <section className='navbar-section'>Navigation goes here</section>
+        <section className='navbar-section'>
+          <Navbar />
+        </section>
         <section className='user-section'>User icon goes here</section>
       </div>
-      <main className='main'>Main section</main>
+      <main className='main'>{props.children}</main>
     </div>
   );
 };

@@ -1,9 +1,12 @@
+import { Outlet, useNavigate } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 
 const App = () => {
   return (
     <div className='app'>
-      <Layout />
+      <Layout>
+        <Outlet />
+      </Layout>
     </div>
   );
 };

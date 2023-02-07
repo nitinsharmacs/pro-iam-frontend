@@ -1,21 +1,29 @@
+@import '../../styles/variables.scss';
+
 .layout {
   width: 100%;
   height: 100%;
-  background-color: #caf0f8;
+  background-color: $main-bg-color;
   position: fixed;
   display: flex;
 }
 
 .sidebar {
   min-width: 300px;
-  background-color: #00b4d8;
+  background-color: $sidebar-bg-color;
   display: flex;
   flex-direction: column;
-}
-
-.logo-section {
+  padding: $main-padding;
 }
 
 .navbar-section {
+  flex: 1;
+  background-color: #fff;
+  border-radius: $main-border-radius;
+  margin: $main-padding 0;
+}
+
+.main {
+  padding: $main-padding;
   flex: 1;
 }

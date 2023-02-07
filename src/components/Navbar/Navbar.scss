@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.navbar {
+  padding: $main-padding;
+}
+
+.navbar-item,
+.navbar-item > .MuiTouchRipple-root {
+  border-radius: $main-border-radius;
+}
