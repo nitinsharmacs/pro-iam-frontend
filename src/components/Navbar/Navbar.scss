@@ -5,6 +5,18 @@
 }
 
 .navbar-item,
-.navbar-item > .MuiTouchRipple-root {
+.navbar-item .MuiTouchRipple-root {
   border-radius: $main-border-radius;
+}
+
+.navbar-item {
+  text-decoration: none;
+}
+
+.navbar-item * {
+  color: $font-color-regular;
+}
+
+.navbar-item.active * {
+  color: $font-color-bold;
 }

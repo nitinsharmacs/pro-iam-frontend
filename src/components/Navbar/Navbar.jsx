@@ -7,19 +7,23 @@ import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavbarItem = (props) => (
-  <Link to={props.href}>
-    <MenuItem className='navbar-item'>
-      <ListItemIcon className='navbar-item-icon'>
+  <NavLink to={props.href} className='navbar-item'>
+    <MenuItem>
+      <ListItemIcon
+        className={({ isActive, isPending }) =>
+          ['navbar-item-icon', isActive ? 'active' : ''].join(' ')
+        }
+      >
         <FontAwesomeIcon icon={props.icon} />
       </ListItemIcon>
       <Typography variant='inherit' className='navbar-item-label'>
         {props.label}
       </Typography>
     </MenuItem>
-  </Link>
+  </NavLink>
 );
 
 const Navbar = (props) => {
