@@ -10,13 +10,14 @@ import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
 
 const NavbarItem = (props) => (
-  <NavLink to={props.href} className='navbar-item'>
+  <NavLink
+    to={props.href}
+    className={({ isActive }) =>
+      ['navbar-item', isActive ? 'active' : ''].join(' ')
+    }
+  >
     <MenuItem>
-      <ListItemIcon
-        className={({ isActive }) =>
-          ['navbar-item-icon', isActive ? 'active' : ''].join(' ')
-        }
-      >
+      <ListItemIcon className='navbar-item-icon'>
         <FontAwesomeIcon icon={props.icon} />
       </ListItemIcon>
       <Typography variant='inherit' className='navbar-item-label'>

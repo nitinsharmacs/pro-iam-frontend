@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.search-bar {
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+  }
+
+  &.focus {
+    border: 1px solid $border-color;
+  }
+}
+
+.search-icon {
+  margin-right: 0.5em;
+  display: inline-block;
+  color: gray;
+  font-size: small;
+}

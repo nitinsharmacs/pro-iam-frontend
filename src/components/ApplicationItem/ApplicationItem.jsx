@@ -17,7 +17,7 @@ const defaults = {
 };
 const ApplicationItem = ({ name, id, image }) => {
   return (
-    <Card className='application-item'>
+    <Card className='application-item' data-type='application'>
       <Box className='application-image'>
         <CardMedia
           component='img'
