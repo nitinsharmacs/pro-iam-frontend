@@ -1,0 +1,27 @@
+.application-item {
+  display: flex;
+  max-width: 400px;
+
+  padding: 0.5rem;
+}
+
+.application-image {
+  width: 100px;
+  img {
+    height: 100%;
+  }
+}
+
+.application-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin-left: 1em;
+}
+
+.application-item-controls {
+  display: flex;
+  justify-content: flex-end;
+}

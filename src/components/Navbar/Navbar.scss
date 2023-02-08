@@ -11,12 +11,10 @@
 
 .navbar-item {
   text-decoration: none;
-}
-
-.navbar-item * {
-  color: $font-color-regular;
-}
-
-.navbar-item.active * {
-  color: $font-color-bold;
+  * {
+    color: $font-color-regular;
+  }
+  &.active * {
+    color: $font-color-bold;
+  }
 }

@@ -13,7 +13,7 @@ const NavbarItem = (props) => (
   <NavLink to={props.href} className='navbar-item'>
     <MenuItem>
       <ListItemIcon
-        className={({ isActive, isPending }) =>
+        className={({ isActive }) =>
           ['navbar-item-icon', isActive ? 'active' : ''].join(' ')
         }
       >
