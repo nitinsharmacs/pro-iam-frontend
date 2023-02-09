@@ -8,29 +8,32 @@ import Paper from '@mui/material/Paper';
 
 import { searchBar, searchIcon } from './classes.js';
 
-const SearchBar = ({ onChange, title, placeholder, focus }) => {
-  const [value, setValue] = useState('');
+const useInputFocus = (inputRef) => {
   const [searchBarClasses, setSearchBarClasses] = useState([searchBar]);
 
-  const inputRef = useRef(null);
-
   useEffect(() => {
-    if (focus) {
-      inputRef.current.focus();
-      inputRef.current.onblur = () => {
-        setSearchBarClasses([searchBar]);
-      };
+    inputRef.current.onblur = () => {
+      setSearchBarClasses([searchBar]);
+    };
+
+    inputRef.current.onfocus = () => {
       setSearchBarClasses([...searchBarClasses, 'focus']);
-    }
+    };
+
+    inputRef.current.focus();
   }, [inputRef]);
+
+  return searchBarClasses;
+};
+
+const SearchBar = ({ onChange, title, placeholder, focus }) => {
+  const [value, setValue] = useState('');
+  const inputRef = useRef(null);
+  const searchBarClasses = useInputFocus(inputRef);
 
   const onChangeHandler = useCallback((evt) => {
     setValue(evt.target.value);
     onChange(evt.target.value);
-  });
-
-  const onInputFocus = useCallback((evt) => {
-    setSearchBarClasses([...searchBarClasses, 'focus']);
   });
 
   return (
@@ -44,7 +47,6 @@ const SearchBar = ({ onChange, title, placeholder, focus }) => {
         placeholder={placeholder}
         value={value}
         onChange={onChangeHandler}
-        onFocus={onInputFocus}
       />
     </Paper>
   );
